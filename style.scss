@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive, Arial, Helvetica, sans-serif;
+}
+// Task 1
+.section-task1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    min-width: 230px;
+    width: 100%;
+    background: #e3cfcf;
+
+    & .container-img-task1 {
+        overflow: hidden;
+        & .img-task1 {
+            height: 100%;
+            width: 108%;
+        }
+    }
+
+    & .container-texts-task1 {
+        gap: 16px;
+        display: grid;
+        padding: 70px 16px;
+        align-self: center;
+        justify-items: center;
+
+        h1 {
+            text-transform: uppercase;
+        }
+        p,
+        h1 {
+            text-align: center;
+        }
+        .toggle-btn {
+            padding: 16px;
+        }
+    }
+}
+@media (max-width: 375px) {
+    .section-task1 {
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-content: center;
+        // height: 100dvh;
+        .container-img-task1 {
+            height: 40vh;
+        }
+    }
+}
+@media (376px <= width <= 500px) {
+    .section-task1 .container-img-task1 .img-task1 {
+        position: relative;
+        left: -190px;
+        width: 260%;
+    }
+}
+@media (500px <= width <= 1440px) {
+    .section-task1 {
+        & .container-img-task1 {
+            width: 50%;
+        }
+
+        & .container-texts-task1 {
+            width: 50%;
+        }
+    }
+}
+.newChildLeftRight {
+    position: relative;
+    animation: left-right 1s cubic-bezier(0.26, 0.22, 0.66, 0.67);
+}
+.newChildRightLeft {
+    position: relative;
+    animation: right-left 1s cubic-bezier(0.26, 0.22, 0.66, 0.67);
+}
+@keyframes left-right {
+    0% {
+        right: 150%;
+    }
+
+    25% {
+        right: 100%;
+    }
+
+    50% {
+        right: 50%;
+    }
+
+    75% {
+        right: -25%;
+    }
+
+    100% {
+        right: 0%;
+    }
+}
+@keyframes right-left {
+    0% {
+        right: 0%;
+    }
+
+    25% {
+        right: -25%;
+    }
+
+    50% {
+        right: 50%;
+    }
+
+    75% {
+        right: 100%;
+    }
+
+    100% {
+        right: 150%;
+    }
+}
